@@ -15,30 +15,29 @@ const Signup = () => {
     };
     
     const handleSubmit = async (e) => {
-        e.preventDefault();
-        try{
-            const response = await  fetch("http://127.0.0.1:8000/api/signup/", {
-                method: 'POST',
-                headers: {'Content-Type':'application/json'},
-                body: JSON.stringify(formData)
-            });
-            if(response.status===201) {
-                toast.success('Signup successful! Please login.');
-                setTimeout(()=> {
-                    navigate('/login');
-                },2000);
-            }
-            else {
-                const data = await response.json();
-                toast.error(data.message);
-            }
+    e.preventDefault();
+    try {
+        const apiUrl = process.env.REACT_APP_API_URL;
+        const response = await fetch(`${apiUrl}/api/signup/`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(formData)
+        });
+
+        if (response.status === 201) {
+            toast.success('Signup successful! Please login.');
+            setTimeout(() => {
+                navigate('/login');
+            }, 2000);
+        } else {
+            const data = await response.json();
+            toast.error(data.message);
         }
-            catch(error){
-                console.error('Error:', error);
-                toast.error('Something went wrong. Try again!!');
-            }
-        
-    };
+    } catch (error) {
+        console.error('Error:', error);
+        toast.error('Something went wrong. Try again!!');
+    }
+};
   return (
     <div className='container mt-5'>
         <div className='text-center mb-4'>
