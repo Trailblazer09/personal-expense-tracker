@@ -1,4 +1,4 @@
-<h1 align="center">Personal Expense Tracker Web App</h1>
+<h1 align="center">Personal Expense Tracker </h1>
 <p align="center">Made with love ❤️ by Anmol Agarwal</p>
 
 <p align="center">
