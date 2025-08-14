@@ -9,7 +9,7 @@ const Home = () => {
      <p className='lead'> Log, analyze, and adapt—your finances, your dashboard.</p>
 
      <div className='mt-4'>
-        {userId? ( <> <Link to ="/dashborard" className='btn btn-warning mx-2'>
+        {userId? ( <> <Link to ="/dashboard" className='btn btn-warning mx-2'>
         <i className='fas fa-tachometer-alt me-2'></i> Go to dashboard</Link> </>):
         ( 
         <><Link to ="/signup" className='btn btn-success mx-2'>
