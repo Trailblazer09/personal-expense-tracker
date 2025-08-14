@@ -28,7 +28,7 @@ const ManageExpense = () => {
            {
             try
             {
-               const response = await  fetch(`http://127.0.0.1:8000/api/manage_expense/${userId}`);
+              const response = await fetch(`${process.env.REACT_APP_API_URL}/api/manage_expense/${userId}`);
                const data = await response.json();
                setExpenses(data);
             }
@@ -42,7 +42,7 @@ const ManageExpense = () => {
            {
             try
             {
-               const response = await  fetch(`http://127.0.0.1:8000/api/update_expense/${editExpense.id}/`,
+               const response = await fetch(`${process.env.REACT_APP_API_URL}/api/update_expense/${editExpense.id}/`, 
                 {
 
                     method: 'PUT',
@@ -70,7 +70,7 @@ const ManageExpense = () => {
             if(window.confirm('Alright, shall we delete this entry?')){
             try
             {
-               const response = await  fetch(`http://127.0.0.1:8000/api/delete_expense/${expenseId}/`,
+               const response = await fetch(`${process.env.REACT_APP_API_URL}/api/delete_expense/${expenseId}/`, 
                 {
 
                     method: 'DELETE',

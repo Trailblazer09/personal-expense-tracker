@@ -50,8 +50,8 @@ const Dashboard = () => {
   const fetchExpenses = async (userId) => {
     try {
       const response = await fetch(
-        `http://127.0.0.1:8000/api/manage_expense/${userId}`
-      );
+  `${process.env.REACT_APP_API_URL}/api/manage_expense/${userId}`
+);
       const data = await response.json();
       setExpenses(data);
       calculateTotals(data);

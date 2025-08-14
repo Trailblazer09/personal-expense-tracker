@@ -24,7 +24,7 @@ const ExpenseReport = () => {
             const handleSubmit = async (e) => {
                 e.preventDefault();
                 try{
-                    const response = await  fetch(`http://127.0.0.1:8000/api/search_expense/${userId}/?from=${fromDate}&to=${toDate}`);
+                    const response = await fetch(`${process.env.REACT_APP_API_URL}/api/search_expense/${userId}/?from=${fromDate}&to=${toDate}`);
                               
                     
                     const data = await response.json();
