@@ -13,7 +13,15 @@ const Navbar = () => {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
-      <Link className="navbar-brand" to="#"><i className="fas fa-wallet me-2"></i>Expense Tracker</Link>
+      
+<div className="d-flex flex-column">
+  <Link className="navbar-brand" to="#">
+    <i className="fas fa-wallet me-2"></i>Expense Tracker
+  </Link>
+  <div style={{ fontSize: '0.8rem', color: '#ccc', marginTop: '-0.4rem', marginLeft: '0.15rem' }}>
+    Designed and developed with purpose and love ❤️ by Anmol Agarwal
+  </div>
+</div>
       <button
         className="navbar-toggler"
         type="button"
