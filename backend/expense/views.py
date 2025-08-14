@@ -3,6 +3,10 @@ from django.views.decorators.csrf import csrf_exempt
 import json
 from .models import *
 
+def ping(request):
+    return JsonResponse({'status': 'alive'})
+
+
 #Signup API
 @csrf_exempt
 def signup(request):

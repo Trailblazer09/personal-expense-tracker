@@ -3,11 +3,13 @@ from django.http import JsonResponse
 from .views import *
 def test_api(request):
     return JsonResponse({"message": "API is working"})
-
+def ping(request):
+    return JsonResponse({"status": "alive"})
 
 
 urlpatterns = [
     path('', test_api),
+    path('ping/', ping),
     path('signup/', signup, name="signup"),
     path('login/', login, name="login"),
     path('add_expense/',add_expense, name="add_expense"),
